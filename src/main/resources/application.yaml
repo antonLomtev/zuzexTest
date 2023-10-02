@@ -1,0 +1,12 @@
+spring:
+  liquibase:
+    change-log: classpath:db.changelog-master.yaml
+    enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/zuzex_db
+    username: postgres
+    password: 1111
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none

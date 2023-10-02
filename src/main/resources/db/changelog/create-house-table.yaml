@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: Anton
+      changes:
+        - createTable:
+            tableName: house
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: address
+                  type: varchar(100)
+              - column:
+                  name: owner_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: owner_house_fk
+                    referencedTableName: owner
+                    referencedColumnNames: id
+              - column:
+                  name: user_id
+                  type: bigint
